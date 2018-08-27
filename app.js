@@ -15,7 +15,7 @@ var crypto = require('crypto');
 const flash = require('express-flash-notification');
 var session = require('express-session');
 //var flash = require('express-flash');
-
+var mongoPassword = 'lorgnette';
 //require cors
 var cors = require('cors');
 var config = JSON.parse(process.env.APP_CONFIG);
