@@ -1,7 +1,7 @@
 var attendance = angular.module('attendance',[]);
 
 attendance.controller('attendanceCtrl', ['$http','$q', '$window', function($http,$q,$window) {
-    var baseURL = 'http://localhost:3000/';
+    var baseURL = 'http://redoxcorp.eu-4.evennode.com/';
     var self = this;
     self.code;
     self.times;
