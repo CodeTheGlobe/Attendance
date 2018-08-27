@@ -3,7 +3,7 @@ var cors = require('cors');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 
-var Login = require('../models/login');
+var Login = require('../models/Login');
 var Verify = require('./verify');
 
 
