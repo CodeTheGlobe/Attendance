@@ -1,0 +1,41 @@
+<html ng-app="attendance">
+<head>
+<link rel="stylesheet" type="text/css" href="/css/index.css" />
+<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
+<script src="/js/angular.min.js"></script>
+<script src="/js/index.js"></script>
+</head>
+<body ng-controller="attendanceCtrl as ctrl">
+<div class="">
+<table border="1" style="width:100%">
+<tr style="background-color:#081A2C">
+<th style="color:white; padding:1em">DATE</th>    
+<th style="color:white; padding:1em">NAME</th>    
+<th style="color:white; padding:1em">TIME IN</th>    
+<th style="color:white; padding:1em">TIME OUT</th>    
+<th style="color:white; padding:1em">CHECKOUT</th>    
+</tr>    
+<tr ng-repeat="time in ctrl.times">
+<td style="color:silver; padding:1em"><b>{{time.date}}/{{time.month}}</b></td>    
+<td style="color:silver; padding:1em"><b>{{time.name}}</b></td>    
+<td style="padding:1em"><b>{{time.hours}}:{{time.minutes}}</b></td>      
+<td style="padding:1em"><b>{{time.hours1}}:{{time.minutes1}}</b></td>      
+<td style="padding:1em"><button ng-click="ctrl.checkout(time._id)" class="form-control">OUT</button></td>      
+</tr>    
+   
+    
+</table><br />
+    <a class="form-control" style="background-color:#638FA1; color:white; text-align:center; text-decoration:none; padding:2em" type="button" href="/">CLOCK IN</a>
+<!--
+    <div ng-repeat="time in ctrl.times">
+    <div style="color:white;text-align:center; padding:10px; background-color:#081A2C">
+    <p>{{time.name}}</p>
+    </div>   
+    <div style="color:white;text-align:center; padding:45px">
+    <p>{{time.createdAt}}</p>
+    </div>
+    </div>
+-->
+</div>
+</body>
+</html>
