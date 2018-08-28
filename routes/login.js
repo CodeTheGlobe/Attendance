@@ -3,12 +3,12 @@ var cors = require('cors');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 
-var Login = require('../models/Login');
+var Login = require('../models/login');
 var Verify = require('./verify');
 
 
 var ipName = require('dns').lookup(require('os').hostname(), function (err, add, fam) {
-  console.log(ipName.hostname);
+//  console.log('addr: '+add);
     return;
 })
 
@@ -33,29 +33,7 @@ dishRouter.route('/')
 
 
 .post(function(req,res,next) {
-//    if(ipName.hostname == 'JOSEPH'||'DESKTOP-Q808O43') {
-    switch (ipName.hostname) {
-    case JOSEPH:
-        day = "Sunday";
-        break;
-    case HP-PC:
-        day = "Monday";
-        break;
-    case DESKTOP-Q808O43:
-        day = "Tuesday";
-        break;
-    case 3:
-        day = "Wednesday";
-        break;
-    case 4:
-        day = "Thursday";
-        break;
-    case 5:
-        day = "Friday";
-        break;
-    case 6:
-        day = "Saturday";
-}
+    if(ipName.hostname == 'JOSEPH') {
             Login.create(req.body, function(err,dish) {
         if(err) return next(err);
 
@@ -64,12 +42,63 @@ dishRouter.route('/')
 
         res.json(dish);
     });
-        
-//    }
+    }
+    
+    if(ipName.hostname == 'DESKTOP-Q808O43') {
+            Login.create(req.body, function(err,dish) {
+        if(err) return next(err);
 
-//else {
-//    console.log('failed');
-//}
+        console.log('Post Created!');
+//        var id = dish._id;
+
+        res.json(dish);
+    });
+    }
+    
+    if(ipName.hostname == 'DESKTOP-SB076C5') {
+            Login.create(req.body, function(err,dish) {
+        if(err) return next(err);
+
+        console.log('Post Created!');
+//        var id = dish._id;
+
+        res.json(dish);
+    });
+    }
+    
+    if(ipName.hostname == 'DESKTOP-1QIMCS3') {
+            Login.create(req.body, function(err,dish) {
+        if(err) return next(err);
+
+        console.log('Post Created!');
+//        var id = dish._id;
+
+        res.json(dish);
+    });
+    }
+    
+    if(ipName.hostname == 'DESKTOP-7VB6V3N') {
+            Login.create(req.body, function(err,dish) {
+        if(err) return next(err);
+
+        console.log('Post Created!');
+//        var id = dish._id;
+
+        res.json(dish);
+    });
+    }
+    
+    if(ipName.hostname == 'DESKTOP-25PQQM3') {
+            Login.create(req.body, function(err,dish) {
+        if(err) return next(err);
+
+        console.log('Post Created!');
+//        var id = dish._id;
+
+        res.json(dish);
+    });
+    }
+
 
 
 })
