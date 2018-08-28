@@ -3,7 +3,7 @@ var cors = require('cors');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 
-var Login = require('../models/login');
+var Login = require('../models/Login');
 var Verify = require('./verify');
 
 
@@ -33,7 +33,7 @@ dishRouter.route('/')
 
 
 .post(function(req,res,next) {
-//    if(ipName.hostname == 'JOSEPH') {
+    if(ipName.hostname == 'JOSEPH'||ipName.hostname == 'JOSHHHEPH') {
             Login.create(req.body, function(err,dish) {
         if(err) return next(err);
 
