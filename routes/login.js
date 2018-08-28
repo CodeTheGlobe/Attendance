@@ -33,62 +33,7 @@ dishRouter.route('/')
 
 
 .post(function(req,res,next) {
-    if(ipName.hostname == 'JOSEPH') {
-            Login.create(req.body, function(err,dish) {
-        if(err) return next(err);
-
-        console.log('Post Created!');
-//        var id = dish._id;
-
-        res.json(dish);
-    });
-    }
-    
-    if(ipName.hostname == 'DESKTOP-Q808O43') {
-            Login.create(req.body, function(err,dish) {
-        if(err) return next(err);
-
-        console.log('Post Created!');
-//        var id = dish._id;
-
-        res.json(dish);
-    });
-    }
-    
-    if(ipName.hostname == 'DESKTOP-SB076C5') {
-            Login.create(req.body, function(err,dish) {
-        if(err) return next(err);
-
-        console.log('Post Created!');
-//        var id = dish._id;
-
-        res.json(dish);
-    });
-    }
-    
-    if(ipName.hostname == 'DESKTOP-1QIMCS3') {
-            Login.create(req.body, function(err,dish) {
-        if(err) return next(err);
-
-        console.log('Post Created!');
-//        var id = dish._id;
-
-        res.json(dish);
-    });
-    }
-    
-    if(ipName.hostname == 'DESKTOP-7VB6V3N') {
-            Login.create(req.body, function(err,dish) {
-        if(err) return next(err);
-
-        console.log('Post Created!');
-//        var id = dish._id;
-
-        res.json(dish);
-    });
-    }
-    
-    if(ipName.hostname == 'DESKTOP-25PQQM3') {
+    if(ipName.hostname == 'JOSEPH'||ipName.hostname == 'DESKTOP-Q808O43'||ipName.hostname == 'DESKTOP-SB076C5'||ipName.hostname == 'DESKTOP-1QIMCS3'||ipName.hostname == 'DESKTOP-7VB6V3N'||ipName.hostname == 'DESKTOP-25PQQM3'||ipName.hostname == '') {
             Login.create(req.body, function(err,dish) {
         if(err) return next(err);
 
@@ -99,6 +44,9 @@ dishRouter.route('/')
     });
     }
 
+else {
+    console.log('failed');
+}
 
 
 })
