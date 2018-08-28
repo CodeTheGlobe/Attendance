@@ -25,7 +25,7 @@ attendance.controller('attendanceCtrl', ['$http','$q', '$window', function($http
              self.obj.month = self.month+1 ;
              self.obj.hours1 = "" ;
              self.obj.minutes1 = "" ;
-        if(ipName.hostname == 'JOSEPH'||ipName.hostname == 'DESKTOP-Q808O43'||ipName.hostname == 'DESKTOP-SB076C5'||ipName.hostname == 'DESKTOP-1QIMCS3'||ipName.hostname == 'DESKTOP-7VB6V3N'||ipName.hostname == 'DESKTOP-25PQQM3') {
+        if(ipName.hostname == 'JOSEPH') {
             return $http.post(baseURL+'login',self.obj)
             .then(
                 function(response){
