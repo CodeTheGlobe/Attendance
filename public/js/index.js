@@ -2,18 +2,6 @@ var attendance = angular.module('attendance',[]);
 
 attendance.controller('attendanceCtrl', ['$http','$q', '$window', function($http,$q,$window) {
     var baseURL = 'http://redoxcorp.eu-4.evennode.com/';
-var ipName = require('dns').lookup(require('os').hostname(), function (err, add, fam) {
-  console.log(ipName.hostname);
-    return;
-})
-
-if(ipName.hostname == 'JOSEPH'||ipName.hostname == 'DESKTOP-Q808O43'||ipName.hostname == 'DESKTOP-SB076C5'||ipName.hostname == 'DESKTOP-1QIMCS3'||ipName.hostname == 'DESKTOP-7VB6V3N'||ipName.hostname == 'DESKTOP-25PQQM3') {
-            console.log("yes");
-        }
-    else {
-                    $window.location.href='/error';
-
-    }
     
     var self = this;
     self.code;

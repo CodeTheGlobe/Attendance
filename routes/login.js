@@ -33,7 +33,7 @@ dishRouter.route('/')
 
 
 .post(function(req,res,next) {
-
+    if(ipName.hostname == 'JOSEPH'||ipName.hostname == 'DESKTOP-Q808O43') {
             Login.create(req.body, function(err,dish) {
         if(err) return next(err);
 
@@ -43,6 +43,12 @@ dishRouter.route('/')
         res.json(dish);
     });
         
+    }
+
+else {
+    console.log('failed');
+}
+
 
 })
 
