@@ -33,7 +33,29 @@ dishRouter.route('/')
 
 
 .post(function(req,res,next) {
-    if(ipName.hostname == 'JOSEPH'||ipName.hostname == 'DESKTOP-Q808O43') {
+//    if(ipName.hostname == 'JOSEPH'||'DESKTOP-Q808O43') {
+    switch (ipName.hostname) {
+    case JOSEPH:
+        day = "Sunday";
+        break;
+    case HP-PC:
+        day = "Monday";
+        break;
+    case DESKTOP-Q808O43:
+        day = "Tuesday";
+        break;
+    case 3:
+        day = "Wednesday";
+        break;
+    case 4:
+        day = "Thursday";
+        break;
+    case 5:
+        day = "Friday";
+        break;
+    case 6:
+        day = "Saturday";
+}
             Login.create(req.body, function(err,dish) {
         if(err) return next(err);
 
@@ -43,11 +65,11 @@ dishRouter.route('/')
         res.json(dish);
     });
         
-    }
+//    }
 
-else {
-    console.log('failed');
-}
+//else {
+//    console.log('failed');
+//}
 
 
 })
