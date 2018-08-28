@@ -34,6 +34,7 @@ db.once('open',function() {
 var index = require('./routes/index');
 var login = require('./routes/login');
 var admin = require('./routes/admin');
+var error = require('./routes/error');
 //var users = require('./routes/users');
 //var messages = require('./routes/message');
 //var sendMessages = require('./routes/sendMessage');
@@ -97,6 +98,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', index);
 app.use('/login', login);
 app.use('/admin', admin);
+app.use('/error', error);
 //app.use('/users', users);
 //app.use('/message',messages);
 //app.use('/send',sendMessages);
