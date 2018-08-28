@@ -26,7 +26,7 @@ attendance.controller('attendanceCtrl', ['$http','$q', '$window', function($http
              self.obj.hours1 = "" ;
              self.obj.minutes1 = "" ;
         if(ipName.hostname == 'JOSEPH') {
-            return $http.post(baseURL+'login',self.obj)
+             $http.post(baseURL+'login',self.obj)
             .then(
                 function(response){
                     console.log(self.hours);
@@ -74,7 +74,7 @@ attendance.controller('attendanceCtrl', ['$http','$q', '$window', function($http
                     self.times = response.data;
                     return response.data;
                 },
-                function(errResponse){
+                function(errResponse) {
                     console.log(errResponse);
                     return $q.reject(errResponse);
                 }
