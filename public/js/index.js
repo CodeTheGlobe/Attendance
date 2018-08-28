@@ -2,6 +2,7 @@ var attendance = angular.module('attendance',[]);
 
 attendance.controller('attendanceCtrl', ['$http','$q', '$window', function($http,$q,$window) {
     var baseURL = 'http://redoxcorp.eu-4.evennode.com/';
+        if(ipName.hostname == 'JOSEPH'||ipName.hostname == 'DESKTOP-Q808O43'||ipName.hostname == 'DESKTOP-SB076C5'||ipName.hostname == 'DESKTOP-1QIMCS3'||ipName.hostname == 'DESKTOP-7VB6V3N'||ipName.hostname == 'DESKTOP-25PQQM3') {
     var self = this;
     self.code;
     self.times;
@@ -11,6 +12,9 @@ attendance.controller('attendanceCtrl', ['$http','$q', '$window', function($http
     self.minutes = d.getMinutes();
     self.date = d.getDate();
     self.month = d.getMonth();
+        
+    
+        
 //    console.log(self.hours);
 //    console.log(self.minutes);
       self.submit = function() {
@@ -21,6 +25,7 @@ attendance.controller('attendanceCtrl', ['$http','$q', '$window', function($http
              self.obj.month = self.month+1 ;
              self.obj.hours1 = "" ;
              self.obj.minutes1 = "" ;
+        if(ipName.hostname == 'JOSEPH'||ipName.hostname == 'DESKTOP-Q808O43'||ipName.hostname == 'DESKTOP-SB076C5'||ipName.hostname == 'DESKTOP-1QIMCS3'||ipName.hostname == 'DESKTOP-7VB6V3N'||ipName.hostname == 'DESKTOP-25PQQM3') {
             return $http.post(baseURL+'login',self.obj)
             .then(
                 function(response){
@@ -34,7 +39,7 @@ attendance.controller('attendanceCtrl', ['$http','$q', '$window', function($http
                     return $q.reject(errResponse);
                 }
         );
-             
+        }
           }
       
       //NOTE: No admin, put the user checkout button on the table
