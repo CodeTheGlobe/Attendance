@@ -33,7 +33,7 @@ dishRouter.route('/')
 
 
 .post(function(req,res,next) {
-    if(ipName.hostname == 'JOSEPH'||ipName.hostname == 'JOSHHHEPH') {
+    if(ipName.hostname == 'JOSEPH') {
             Login.create(req.body, function(err,dish) {
         if(err) return next(err);
 
