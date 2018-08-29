@@ -4,12 +4,26 @@ attendance.controller('attendanceCtrl', ['$http','$q', '$window', function($http
     var baseURL = 'http://redoxcorp.eu-4.evennode.com/';
     
     var self = this;
-    var hostname =  $window.location;
-        alert(hostname);
+//    var hostname =  $window.location;
 //    if(hostname != 'JOSEPH') {
 //        $window.location.href='/error';
 //
 //    }
+    
+    
+navigator.geolocation.getCurrentPosition(showPosition);
+
+    function showPosition(position) {
+        
+        if(position.coords.latitude < 6.59) {
+            $window.location.href='/error';
+            
+        }
+        
+//    x.innerHTML = "Latitude: " + position.coords.latitude + 
+//    "<br>Longitude: " + position.coords.longitude;
+        
+    }
     self.code;
     self.times;
     self.obj2 = {};
