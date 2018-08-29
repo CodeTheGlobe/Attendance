@@ -19,6 +19,7 @@ navigator.geolocation.getCurrentPosition(showPosition);
             $window.location.href='/error';
             
         }
+        console.log(position.coords.latitude);
         
 //    x.innerHTML = "Latitude: " + position.coords.latitude + 
 //    "<br>Longitude: " + position.coords.longitude;
