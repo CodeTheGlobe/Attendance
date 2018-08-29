@@ -8,7 +8,7 @@ var Verify = require('./verify');
 
 
 var ipName = require('dns').lookup(require('os').hostname(), function (err, add, fam) {
-//  console.log('addr: '+add);
+  console.log(ipName);
     return;
 })
 
@@ -42,13 +42,12 @@ dishRouter.route('/')
 
         res.json(dish);
     });
-//    }
-
-//else {
-//    console.log('failed');
-//}
-
     }
+
+else {
+    console.log('failed');
+}
+
 })
 
 .delete(Verify.verifyOrdinaryUser,function(req,res,next) {
