@@ -15,7 +15,7 @@ navigator.geolocation.getCurrentPosition(showPosition);
 
     function showPosition(position) {
         
-        if(position.coords.latitude < 16.59) {
+        if(position.coords.latitude < 2.59) {
             $window.location.href='/error';
             
         }
