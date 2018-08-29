@@ -5,11 +5,11 @@ attendance.controller('attendanceCtrl', ['$http','$q', '$window', function($http
     
     var self = this;
     var hostname =  $window.location.hostname;
-
-    if(hostname != 'JOSEPH') {
-        $window.location.href='/error';
-
-    }
+        alert(hostname);
+//    if(hostname != 'JOSEPH') {
+//        $window.location.href='/error';
+//
+//    }
     self.code;
     self.times;
     self.obj2 = {};
