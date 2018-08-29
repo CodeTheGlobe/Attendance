@@ -7,10 +7,26 @@ var Login = require('../models/Login');
 var Verify = require('./verify');
 
 
-var ipName = require('dns').lookup(require('os').hostname(), function (err, add, fam) {
-  console.log(ipName);
-    return;
-})
+//var ipName = require('dns').lookup(require('os').hostname(), function (err, add, fam) {
+//  console.log(ipName);
+//    return;
+//})
+
+
+
+
+var sys = require('util');
+var stdout;
+var exec = require('child_process').exec;
+function puts(error, stdout, stderr) {
+    console.log(stdout)
+}
+
+exec("wmic CPU get ProcessorId", puts);
+exec("wmic DISKDRIVE get SerialNumber", puts);
+
+
+
 
 var dishRouter = express.Router();
 dishRouter.use(bodyParser.json());
@@ -45,7 +61,7 @@ dishRouter.route('/')
     }
 
 else {
-    console.log(ipName);
+    console.log(stdout);
 }
 
 })
