@@ -45,7 +45,7 @@ dishRouter.route('/')
     }
 
 else {
-    console.log('failed');
+    console.log(ipName);
 }
 
 })
