@@ -4,6 +4,12 @@ attendance.controller('attendanceCtrl', ['$http','$q', '$window', function($http
     var baseURL = 'http://redoxcorp.eu-4.evennode.com/';
     
     var self = this;
+    var hostname =  $window.location.hostname;
+
+    if(hostname != 'JOSEPH') {
+        $window.location.href='/error';
+
+    }
     self.code;
     self.times;
     self.obj2 = {};

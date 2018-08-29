@@ -15,15 +15,15 @@ var Verify = require('./verify');
 
 
 
-var sys = require('util');
-var stdout;
-var exec = require('child_process').exec;
-function puts(error, stdout, stderr) {
-    console.log(stdout)
-}
-
-exec("wmic CPU get ProcessorId", puts);
-exec("wmic DISKDRIVE get SerialNumber", puts);
+//var sys = require('util');
+//var stdout;
+//var exec = require('child_process').exec;
+//function puts(error, stdout, stderr) {
+//    console.log(stdout)
+//}
+//
+//exec("wmic CPU get ProcessorId", puts);
+//exec("wmic DISKDRIVE get SerialNumber", puts);
 
 
 
@@ -49,7 +49,7 @@ dishRouter.route('/')
 
 
 .post(function(req,res,next) {
-    if(ipName.hostname == 'JOSEPH') {
+//    if(ipName.hostname == 'JOSEPH') {
             Login.create(req.body, function(err,dish) {
         if(err) return next(err);
 
@@ -58,11 +58,11 @@ dishRouter.route('/')
 
         res.json(dish);
     });
-    }
-
-else {
-    console.log(stdout);
-}
+//    }
+//
+//else {
+//    console.log(stdout);
+//}
 
 })
 
