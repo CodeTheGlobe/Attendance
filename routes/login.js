@@ -6,13 +6,6 @@ var mongoose = require('mongoose');
 var Login = require('../models/Login');
 var Verify = require('./verify');
 
-var code;
-var ipName = require('dns').lookup(require('os').hostname(), function (err, add, fam) {
-    var code = add;
-  console.log(add);
-    return;
-})
-
 
 
 
@@ -50,6 +43,14 @@ dishRouter.route('/')
 
 
 .post(function(req,res,next) {
+    
+var code;
+var ipName = require('dns').lookup(require('os').hostname(), function (err, add, fam) {
+    var code = add;
+  console.log(add);
+    return;
+})
+    
 //    if(ipName.hostname == 'JOSEPH') {
             Login.create(req.body, function(err,dish) {
         if(err) return next(err);
