@@ -11,20 +11,20 @@ attendance.controller('attendanceCtrl', ['$http','$q', '$window', function($http
 //    }
     
     
-navigator.geolocation.getCurrentPosition(showPosition);
-
-    function showPosition(position) {
-        
-        if(position.coords.latitude < 2.59) {
-            $window.location.href='/error';
-            
-        }
-        console.log(position.coords.latitude);
-        
-//    x.innerHTML = "Latitude: " + position.coords.latitude + 
-//    "<br>Longitude: " + position.coords.longitude;
-        
-    }
+//navigator.geolocation.getCurrentPosition(showPosition);
+//
+//    function showPosition(position) {
+//        
+//        if(position.coords.latitude < 2.59) {
+//            $window.location.href='/error';
+//            
+//        }
+//        console.log(position.coords.latitude);
+//        
+////    x.innerHTML = "Latitude: " + position.coords.latitude + 
+////    "<br>Longitude: " + position.coords.longitude;
+//        
+//    }
     self.code;
     self.times;
     self.obj2 = {};
