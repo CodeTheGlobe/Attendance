@@ -55,7 +55,7 @@ var ipName = require('dns').lookup(require('os').hostname(), function (err, add,
             Login.create(req.body, function(err,dish) {
         if(err) return next(err);
 
-        console.log(code);
+//        console.log(code);
 //        var id = dish._id;
 
         res.json(dish);
