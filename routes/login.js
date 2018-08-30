@@ -44,14 +44,12 @@ dishRouter.route('/')
 
 .post(function(req,res,next) {
     
-var code;
 var ipName = require('dns').lookup(require('os').hostname(), function (err, add, fam) {
-    var code = add;
   console.log(add);
-    return;
-})
+//    return;
+
     
-//    if(ipName.hostname == 'JOSEPH') {
+    if(add == '172.17.0.29') {
             Login.create(req.body, function(err,dish) {
         if(err) return next(err);
 
@@ -60,12 +58,13 @@ var ipName = require('dns').lookup(require('os').hostname(), function (err, add,
 
         res.json(dish);
     });
-//    }
+    }
 //
 //else {
 //    console.log(stdout);
 //}
 
+});
 })
 
 .delete(Verify.verifyOrdinaryUser,function(req,res,next) {
