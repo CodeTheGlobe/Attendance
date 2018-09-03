@@ -18,9 +18,9 @@ var session = require('express-session');
 var mongoPassword = 'lorgnette';
 //require cors
 var cors = require('cors');
-var config = JSON.parse(process.env.APP_CONFIG);
-//var url = 'mongodb://127.0.0.1:27017/conFusion';
-var url = "mongodb://"+config.mongo.user+":"+encodeURIComponent(mongoPassword)+"@"+config.mongo.hostString;
+//var config = JSON.parse(process.env.APP_CONFIG);
+var url = 'mongodb://127.0.0.1:27017/conFusion';
+//var url = "mongodb://"+config.mongo.user+":"+encodeURIComponent(mongoPassword)+"@"+config.mongo.hostString;
 mongoose.connect(url);
 
 var db = mongoose.connection;
