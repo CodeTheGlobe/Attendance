@@ -67,7 +67,7 @@ navigator.geolocation.getCurrentPosition(showPosition);
                 function(response){
                     alert("You have checked out successfully");
 //                    self.status2 = "You have checked out successfully";
-//                    $window.location.href='/admin';
+                    $window.location.href='/admin';
                     return response.data;
                 },
                 function(errResponse){
