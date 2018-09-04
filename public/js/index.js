@@ -33,6 +33,7 @@ attendance.controller('attendanceCtrl', ['$http','$q', '$window', function($http
 //    console.log(self.minutes);
       self.submit = function() {
                 self.status="Loading...";
+            document.getElementById("Button").disabled = false;
              self.obj.hours = self.hours;
              self.obj.minutes = self.minutes ;
              self.obj.date = self.date ;
@@ -66,6 +67,7 @@ attendance.controller('attendanceCtrl', ['$http','$q', '$window', function($http
             .then(
                 function(response){
                     alert("You have checked out successfully");
+                    document.getElementById("Button").disabled = false;
 //                    self.status2 = "You have checked out successfully";
                     $window.location.href='/admin';
                     return response.data;
