@@ -30,11 +30,13 @@ dishRouter.route('/')
 
 
 .get(function(req,res,next) {
+    var d = new Date();
+    var myDate = d.getDate();
+    var myMonth = d.getMonth();
 //    console.log(req.query.username);
-     Login.find({}, function(err,dish){
+     Login.find({date: myDate, month: myMonth}, function(err,dish){
          if(err) throw err;
-         var newDish = dish.limit(7);
-         res.json(newDish);
+         res.json(dish);
 
      });
 
