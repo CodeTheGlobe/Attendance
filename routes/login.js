@@ -7,7 +7,9 @@ var Login = require('../models/Login');
 var Verify = require('./verify');
 
 
-
+    var d = new Date();
+    var myDate = d.getDate();
+    var myMonth = d.getMonth() + 1;
 
 //var sys = require('util');
 //var stdout;
@@ -30,9 +32,7 @@ dishRouter.route('/')
 
 
 .get(function(req,res,next) {
-    var d = new Date();
-    var myDate = d.getDate();
-    var myMonth = d.getMonth();
+
 //    console.log(req.query.username);
      Login.find({date: myDate, month: myMonth}, function(err,dish){
          if(err) throw err;
