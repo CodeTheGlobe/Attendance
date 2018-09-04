@@ -5,20 +5,22 @@ attendance.controller('attendanceCtrl', ['$http','$q', '$window', function($http
     
     var self = this;
     
-navigator.geolocation.getCurrentPosition(showPosition);
-
-    function showPosition(position) {
-        alert(position.coords.latitude);
-        if(position.coords.latitude < 2.59) {
-            $window.location.href='/error';
-            
-        }
-        console.log(position.coords.latitude);
-        
-//    x.innerHTML = "Latitude: " + position.coords.latitude + 
-//    "<br>Longitude: " + position.coords.longitude;
-        
-    }
+//navigator.geolocation.getCurrentPosition(showPosition);
+//
+//    function showPosition(position) {
+//        alert(position.coords.latitude);
+//        if(position.coords.latitude < 2.59) {
+//            $window.location.href='/error';
+//            
+//        }
+//        console.log(position.coords.latitude);
+//        
+////    x.innerHTML = "Latitude: " + position.coords.latitude + 
+////    "<br>Longitude: " + position.coords.longitude;
+//        
+//    }
+    
+                    document.getElementById("Button").disabled=true;
     
     self.code;
     self.times;
@@ -41,7 +43,6 @@ navigator.geolocation.getCurrentPosition(showPosition);
             return $http.post(baseURL+'login',self.obj)
             .then(
                 function(response){
-                    document.getElementById("Button").disabled = true;
                     self.status="Success";
                     return response.data;
                 },
