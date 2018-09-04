@@ -20,7 +20,6 @@ attendance.controller('attendanceCtrl', ['$http','$q', '$window', function($http
 //        
 //    }
     
-                    document.getElementById("Button").disabled=true;
     
     self.code;
     self.times;
@@ -67,7 +66,6 @@ attendance.controller('attendanceCtrl', ['$http','$q', '$window', function($http
             .then(
                 function(response){
                     alert("You have checked out successfully");
-                    document.getElementById("Button").disabled = false;
 //                    self.status2 = "You have checked out successfully";
                     $window.location.href='/admin';
                     return response.data;
