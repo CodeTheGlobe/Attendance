@@ -41,7 +41,7 @@ attendance.controller('attendanceCtrl', ['$http','$q', '$window', function($http
             return $http.post(baseURL+'login',self.obj)
             .then(
                 function(response){
-                    document.getElementById("Button").disabled=true;
+//                    document.getElementById("Button").disabled=true;
                     self.status="Success";
                     return response.data;
                 },
