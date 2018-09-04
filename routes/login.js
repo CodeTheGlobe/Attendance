@@ -33,7 +33,8 @@ dishRouter.route('/')
 //    console.log(req.query.username);
      Login.find({}, function(err,dish){
          if(err) throw err;
-         res.json(dish);
+         var newDish = dish.limit(7);
+         res.json(newDish);
 
      });
 
