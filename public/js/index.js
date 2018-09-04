@@ -41,7 +41,7 @@ navigator.geolocation.getCurrentPosition(showPosition);
             return $http.post(baseURL+'login',self.obj)
             .then(
                 function(response){
-                    console.log(self.hours);
+                    document.getElementById("Button").disabled = true;
                     self.status="Success";
                     return response.data;
                 },
@@ -66,6 +66,7 @@ navigator.geolocation.getCurrentPosition(showPosition);
             .then(
                 function(response){
                     alert("You have checked out successfully");
+                    document.getElementById("Button").disabled = false;
 //                    self.status2 = "You have checked out successfully";
                     $window.location.href='/admin';
                     return response.data;
