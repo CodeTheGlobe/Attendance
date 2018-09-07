@@ -34,7 +34,7 @@ dishRouter.route('/')
 .get(function(req,res,next) {
 
 //    console.log(req.query.username);
-     Login.find({date: myDate, month: myMonth}, function(err,dish){
+     Login.find({date: myDate}, function(err,dish){
          if(err) throw err;
          res.json(dish);
 
