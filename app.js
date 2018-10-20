@@ -35,26 +35,9 @@ var index = require('./routes/index');
 var login = require('./routes/login');
 var admin = require('./routes/admin');
 var error = require('./routes/error');
-//var users = require('./routes/users');
-//var messages = require('./routes/message');
-//var sendMessages = require('./routes/sendMessage');
-//var login = require('./routes/page-login');
-//var tables = require('./routes/tables');
-//var forget = require('./routes/forget');
-//var register = require('./routes/register');
-//var forgot = require('./routes/forgot');
-//var reset = require('./routes/reset');
-//var shipment = require('./routes/shipment');
-//var createShipment = require('./routes/createShipment');
-//var updateShipment = require('./routes/updateShipment');
 
 
 var app = express();
-//var ipName = require('dns').lookup(require('os').hostname(), function (err, add, fam) {
-////  console.log('addr: '+add);
-//    return;
-//})
-//console.log(ipName.hostname);
 
 //socket.io
 var server = require('http').Server(app);

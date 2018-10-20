@@ -17,11 +17,11 @@ dishRouter.route('/')
 
 
 .get(function(req,res,next) {
-    var d = new Date();
-    var myDate = d.getDate();
-    var myMonth = d.getMonth() + 1;
-
-     Login.find({date: myDate, month: myMonth}, function(err,dish){
+//    var d = new Date();
+//    var myDate = d.getDate();
+//    var myMonth = d.getMonth() + 1;
+//date: myDate, month: myMonth
+     Login.find({}, function(err,dish){
          if(err) throw err;
          res.json(dish);
 
