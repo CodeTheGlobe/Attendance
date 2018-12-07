@@ -33,6 +33,7 @@ db.once('open',function() {
 
 var index = require('./routes/index');
 var login = require('./routes/login');
+var dashboard = require('./routes/dashboard');
 var admin = require('./routes/admin');
 var error = require('./routes/error');
 
@@ -82,6 +83,7 @@ app.use('/', index);
 app.use('/login', login);
 app.use('/admin', admin);
 app.use('/error', error);
+app.use('/dashboard', dashboard);
 //app.use('/users', users);
 //app.use('/message',messages);
 //app.use('/send',sendMessages);

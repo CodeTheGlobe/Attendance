@@ -53,6 +53,35 @@ attendance.controller('attendanceCtrl', ['$http','$q', '$window', function($http
         );
              
           }
+    
+    
+    var config = 
+    {
+    params: {
+        day: self.obj3.days,
+        month: self.obj3.month
+            }
+    }
+    
+    self.send = function() {
+        
+        return $http.get(baseURL+'/dashboard', config)
+        .then(
+                function(response){
+                    console.log(response.data);
+                    self.times2 = response.data;
+                    return response.data;
+                },
+                function(errResponse){
+                    console.log(errResponse);
+                    return $q.reject(errResponse);
+                }
+        );    
+        
+        
+    }
+
+
       
       //NOTE: No admin, put the user checkout button on the table
             self.checkout = function(id) {

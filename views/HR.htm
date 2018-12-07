@@ -1,0 +1,146 @@
+<html ng-app="attendance">
+<head>
+<meta http-equiv='cache-control' content='no-cache'>
+<meta http-equiv='expires' content='0'>
+<meta http-equiv='pragma' content='no-cache'>
+<link rel="stylesheet" type="text/css" href="../public/css/index.css" />
+<link rel="stylesheet" type="text/css" href="../public/css/bootstrap.min.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+<script src="../public/js/angular.min.js"></script>
+<script src="../public/js/index.js"></script>
+</head>
+<body ng-controller="attendanceCtrl as ctrl">
+
+<div class="mydiv">
+<h3 style="" class="">H.R. Dashboard</h3><hr /><br />
+<div class="myFlex">
+    <select ng-model="ctrl.obj3.day" class="col-md-3 myFlex form-control">
+    <option selected>Select Day</option>
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+    <option value="7">7</option>
+    <option value="8">8</option>    
+    <option value="9">9</option>
+    <option value="10">10</option>
+    <option value="11">11</option>
+    <option value="12">12</option>
+    <option value="13" >13</option>
+    <option value="14">14</option>
+    <option value="15">15</option>
+    <option value="16">16</option>
+    <option value="17">17</option>
+    <option value="18">18</option>
+    <option value="19">19</option>
+    <option value="20">20</option>
+    <option value="21">21</option>    
+    <option value="22">22</option>
+    <option value="23">23</option>
+    <option value="24">24</option>
+    <option value="25">25</option>
+    <option value="26">26</option>
+    <option value="27">27</option>    
+    <option value="28">28</option>
+    <option value="29">29</option>
+    <option value="30">30</option>
+    <option value="31">31</option>
+    </select>
+    <select ng-model="ctrl.obj3.month" class="col-md-3 myFlex form-control">
+    <option selected>Select Month</option>
+    <option value="January">January</option>
+    <option value="February">February</option>
+    <option value="February">March</option>
+    <option value="April">April</option>
+    <option value="May">May</option>
+    <option value="June">June</option>
+    <option value="July">July</option>
+    <option value="August">August</option>    
+    <option value="September">September</option>
+    <option value="October">October</option>
+    <option value="November">November</option>
+    <option value="December">December</option>
+    </select>       
+    </div><br /><br />
+    <input ng-click="ctrl.send()" style="background-color:#638FA1; color:white" class="col-md-3 form-control" type="button" value="Search" /><hr />
+<!--    <p ng-cloak style="text-align:center;color:blue">{{ctrl.status}}</p>-->
+<!--    <input ng-click="ctrl.checkout()" style="background-color:#f77; border-color:aqua" class="form-control" type="button" value="Check Out" /><hr />-->
+
+</div>
+    
+    
+
+<div class="align container">
+    
+<table border="1" style="width:100%">
+<tr style="background-color:#081A2C">
+<th style="color:white; padding:1em">DATE</th>    
+<th style="color:white; padding:1em">NAME</th>    
+<th style="color:white; padding:1em">TIME IN</th>    
+<th style="color:white; padding:1em">TIME OUT</th>    
+<th style="color:white; padding:1em">CHECKOUT</th>    
+</tr>    
+<tr ng-repeat="time in ctrl.times">
+<td style="color:silver; padding:1em"><b>{{time.date}}/{{time.month}}</b></td>    
+<td style="color:silver; padding:1em"><b>{{time.name}}</b></td>    
+<td style="padding:1em"><b>{{time.hours}}:{{time.minutes}}</b></td>      
+<td style="padding:1em"><b>{{time.hours1}}:{{time.minutes1}}</b></td>      
+<td style="padding:1em"><button ng-click="ctrl.checkout(time._id)" class="form-control">OUT</button></td>      
+</tr>    
+   
+    
+</table>
+<!--  <h2>Fading Modal</h2>-->
+
+  <!-- Button to Open the Modal -->
+<!--
+  <a type="button" class="btn btn-primary" href="/admin">
+      CLOCK OUT
+  </a>
+-->
+
+  <!-- The Modal -->
+<!--
+  <div class="modal fade" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+-->
+      
+        <!-- Modal Header -->
+<!--
+        <div class="modal-header">
+          <h4 class="modal-title">Admin Validation</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+         <p style="color:red">{{ctrl.message}}</p> 
+        
+-->
+        <!-- Modal body -->
+<!--
+        <div class="modal-body">
+        <input ng-model="ctrl.code" class="form-control" type="text" placeholder="What's the password?" />
+        </div>
+        
+-->
+        <!-- Modal footer -->
+<!--
+        <div class="modal-footer">
+          <button ng-click="ctrl.redirect()" type="button" class="btn btn-primary">Send</button>
+-->
+<!--          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>-->
+<!--        </div>-->
+        
+<!--
+      </div>
+    </div>
+-->
+<!--  </div>-->
+  
+</div>
+
+</body>
+</html>
