@@ -54,8 +54,7 @@ attendance.controller('attendanceCtrl', ['$http','$q', '$window', function($http
              
           }
     
-    self.day;
-    self.month;
+    self.obj3 = {};
     
     var config =  {
     params: {
