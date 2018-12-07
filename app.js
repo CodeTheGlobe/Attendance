@@ -35,6 +35,7 @@ var index = require('./routes/index');
 var login = require('./routes/login');
 var dashboard = require('./routes/dashboard');
 var admin = require('./routes/admin');
+var admin2 = require('./routes/admin2');
 var error = require('./routes/error');
 
 
@@ -84,6 +85,7 @@ app.use('/login', login);
 app.use('/admin', admin);
 app.use('/error', error);
 app.use('/dashboard', dashboard);
+app.use('/admin2', admin2);
 //app.use('/users', users);
 //app.use('/message',messages);
 //app.use('/send',sendMessages);
