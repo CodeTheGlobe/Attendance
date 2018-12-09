@@ -13,7 +13,7 @@ var dishRouter = express.Router();
 dishRouter.use(bodyParser.json());
 
 dishRouter.route('/')
-
+console.log(req.query);
 
 
 .get(function(req,res,next) {
