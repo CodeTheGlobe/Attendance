@@ -56,16 +56,17 @@ attendance.controller('attendanceCtrl', ['$http','$q', '$window', function($http
     
     self.obj3 = {};
     
+
+    
+    
+    self.send = function() {
     var config =  {
     params: {
         day: self.obj3.day,
         month: self.obj3.month
             }
-    }
+                }
    
-    
-    
-    self.send = function() {
         console.log(self.obj3)
      $http.get(baseURL+'dashboard', config)
         .then(
