@@ -19,6 +19,8 @@ dishRouter.route('/')
 //    console.log(req.query);
     var date = req.query.date;
     var month = req.query.month;
+    console.log(date);
+    console.log(month);
 
 //    var d = new Date();
 //    var myDate = d.getDate();
