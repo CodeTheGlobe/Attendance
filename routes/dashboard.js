@@ -19,14 +19,16 @@ dishRouter.route('/')
 //    console.log(req.query);
     var date = req.query.date;
     var month = req.query.month;
-    console.log(date);
-    console.log(month);
+   var d = date.toString();
+   var m = month.toString();
+    console.log(d);
+    console.log(m);
 
 //    var d = new Date();
 //    var myDate = d.getDate();
 //    var myMonth = d.getMonth() + 1;
 
-     Dashboard.find({date:req.query.date, month: req.query.month}, function(err,dish){
+     Dashboard.find({date:d, month:m}, function(err,dish){
          if(err) throw err;
 //         res.json(dish);
          console.log(dish);
