@@ -28,7 +28,8 @@ dishRouter.route('/')
 
      Dashboard.find({date:req.query.date, month: req.query.month}, function(err,dish){
          if(err) throw err;
-         res.json(dish);
+//         res.json(dish);
+         console.log(dish);
 
      });
 
