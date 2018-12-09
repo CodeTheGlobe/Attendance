@@ -16,7 +16,7 @@ dishRouter.route('/')
 
 
 .get(function(req,res,next) {
-    console.log(req.query);
+    console.log(req.params);
 
 //    var d = new Date();
 //    var myDate = d.getDate();
