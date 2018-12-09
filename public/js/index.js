@@ -64,9 +64,10 @@ attendance.controller('attendanceCtrl', ['$http','$q', '$window', function($http
     }
    
     
+    
     self.send = function() {
         
-        return $http.get(baseURL+'/dashboard', config)
+        return $http.get(baseURL+'dashboard', config)
         .then(
                 function(response){
                     console.log(response.data);
