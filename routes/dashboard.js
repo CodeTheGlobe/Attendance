@@ -13,10 +13,11 @@ var dishRouter = express.Router();
 dishRouter.use(bodyParser.json());
 
 dishRouter.route('/')
-console.log(req.query);
 
 
 .get(function(req,res,next) {
+    console.log(req.query);
+
 //    var d = new Date();
 //    var myDate = d.getDate();
 //    var myMonth = d.getMonth() + 1;
