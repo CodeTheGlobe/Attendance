@@ -62,7 +62,7 @@ attendance.controller('attendanceCtrl', ['$http','$q', '$window', function($http
     self.send = function() {
     var config =  {
     params: {
-        day: self.obj3.day,
+        date: self.obj3.day,
         month: self.obj3.month
             }
                 }
