@@ -3,7 +3,7 @@ var cors = require('cors');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 
-var Dashboard = require('../models/dashboard');
+var Login = require('../models/Login');
 var Verify = require('./verify');
 
 
@@ -26,7 +26,7 @@ dishRouter.route('/')
 //    var myDate = d.getDate();
 //    var myMonth = d.getMonth() + 1;
 
-     Dashboard.find({}, function(err,dish){
+     Login.find({date:date, month:month}, function(err,dish){
          if(err) throw err;
          res.json(dish);
 //         console.log(dish);
@@ -39,7 +39,7 @@ dishRouter.route('/')
 
 
 .post(function(req,res,next) {
-    Dashboard.create(req.body, function(err,dish) {
+    Login.create(req.body, function(err,dish) {
         if(err) return next(err);
         res.json(dish);
     });
@@ -48,7 +48,7 @@ dishRouter.route('/')
 })
 
 .delete(Verify.verifyOrdinaryUser,function(req,res,next) {
-    Dashboard.remove({}, function(err, resp){
+    Login.remove({}, function(err, resp){
         if(err) return next(err);
         res.json(resp);
     });
@@ -57,14 +57,14 @@ dishRouter.route('/')
 dishRouter.route('/:dishId')
 //
 //.get(function(req,res,next){
-//    Dashboard.findById(req.params.dishId, function(err, dish) {
+//    Login.findById(req.params.dishId, function(err, dish) {
 //        if(err) return next(err);
 //        res.json(dish);
 //    });
 //})
 //
 .put(function(req,res,next) {
-    Dashboard.findByIdAndUpdate(req.params.dishId, {
+    Login.findByIdAndUpdate(req.params.dishId, {
         $set:{'minutes1':req.body.minutes1,'hours1':req.body.hours1}
     }, {
         new:true
@@ -76,7 +76,7 @@ dishRouter.route('/:dishId')
 });
 
 //.delete(function(req,res,next) {
-//    Dashboard.findByIdAndRemove(req.params.dishId, function(err, resp){
+//    Login.findByIdAndRemove(req.params.dishId, function(err, resp){
 //        if(err) throw err;
 //        res.json(resp);
 //    });
