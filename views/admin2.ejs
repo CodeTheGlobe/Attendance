@@ -82,14 +82,12 @@
 <th style="color:white; padding:1em">NAME</th>    
 <th style="color:white; padding:1em">TIME IN</th>    
 <th style="color:white; padding:1em">TIME OUT</th>    
-<th style="color:white; padding:1em">CHECKOUT</th>    
 </tr>    
 <tr ng-repeat="time in ctrl.times2">
 <td style="color:silver; padding:1em"><b>{{time.date}}/{{time.month}}</b></td>    
 <td style="color:silver; padding:1em"><b>{{time.name}}</b></td>    
 <td style="padding:1em"><b>{{time.hours}}:{{time.minutes}}</b></td>      
 <td style="padding:1em"><b>{{time.hours1}}:{{time.minutes1}}</b></td>      
-<td style="padding:1em"><button ng-click="ctrl.checkout(time._id)" class="form-control">OUT</button></td>      
 </tr>    
    
     

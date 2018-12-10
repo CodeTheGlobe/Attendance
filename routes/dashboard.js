@@ -26,7 +26,7 @@ dishRouter.route('/')
 //    var myDate = d.getDate();
 //    var myMonth = d.getMonth() + 1;
 
-     Login.find({date:date, month:month}, function(err,dish){
+     Login.find({req.query}, function(err,dish){
          if(err) throw err;
          res.json(dish);
 //         console.log(dish);
