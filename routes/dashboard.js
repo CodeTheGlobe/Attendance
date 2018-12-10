@@ -17,8 +17,8 @@ dishRouter.route('/')
 
 .get(function(req,res,next) {
 //    console.log(req.query);
-    var date = {};
-    var month = {};
+    var date = req.query.date;
+    var month = req.query.month;
     console.log(date);
     console.log(month);
 
@@ -54,15 +54,28 @@ dishRouter.route('/')
     });
 });
 
-dishRouter.route('/:dishId')
-//
-//.get(function(req,res,next){
-//    Login.findById(req.params.dishId, function(err, dish) {
-//        if(err) return next(err);
-//        res.json(dish);
-//    });
-//})
-//
+dishRouter.route('/month')
+.get(function(req,res,next) {
+//    console.log(req.query);
+    var date = req.query.date;
+    var month = req.query.month;
+    console.log(date);
+    console.log(month);
+
+//    var d = new Date();
+//    var myDate = d.getDate();
+//    var myMonth = d.getMonth() + 1;
+
+     Login.find({month:month}, function(err,dish){
+         if(err) throw err;
+         res.json(dish);
+//         console.log(dish);
+
+     });
+
+
+})
+
 .put(function(req,res,next) {
     Login.findByIdAndUpdate(req.params.dishId, {
         $set:{'minutes1':req.body.minutes1,'hours1':req.body.hours1}
