@@ -22,6 +22,7 @@ attendance.controller('attendanceCtrl', ['$http','$q', '$window', function($http
     
     self.code;
     self.times;
+    self.times2;
     self.obj2 = {};
     var d = new Date();
     self.hours = d.getHours();
