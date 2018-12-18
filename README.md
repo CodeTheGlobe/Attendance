@@ -3,19 +3,15 @@ A staff attendance web application with a dashboard for admin written with the M
 
 
 
-
-#Download modules
-
-
+# Download modules
 npm install
 
-#Automatic reload
 
 
+# Automatic reload
 run 'npm install -g nodemon' to install nodemon
 
 
 
 ## Development server
-
 Run `nodemon bin/www` for a dev server. Navigate to `http://localhost:3000/`
