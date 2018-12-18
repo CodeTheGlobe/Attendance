@@ -1,25 +1,11 @@
 var attendance = angular.module('attendance',[]);
 
 attendance.controller('attendanceCtrl', ['$http','$q', '$window', function($http,$q,$window) {
-    var baseURL = 'http://redoxcorp.eu-4.evennode.com/';
+    var baseURL = 'http://localhost:3000';
     
     var self = this;
     
-//navigator.geolocation.getCurrentPosition(showPosition);
-//
-//    function showPosition(position) {
-//        alert(position.coords.latitude);
-//        if(position.coords.latitude < 2.59) {
-//            $window.location.href='/error';
-//            
-//        }
-//        console.log(position.coords.latitude);
-//        
-////    x.innerHTML = "Latitude: " + position.coords.latitude + 
-////    "<br>Longitude: " + position.coords.longitude;
-//        
-//    }
-    
+
     self.code;
     self.times;
     self.times2;
@@ -29,8 +15,7 @@ attendance.controller('attendanceCtrl', ['$http','$q', '$window', function($http
     self.minutes = d.getMinutes();
     self.date = d.getDate();
     self.month = d.getMonth();
-//    console.log(self.hours);
-//    console.log(self.minutes);
+
       self.submit = function() {
                 self.status="Loading...";
              self.obj.hours = self.hours;
@@ -42,7 +27,6 @@ attendance.controller('attendanceCtrl', ['$http','$q', '$window', function($http
             return $http.post(baseURL+'login',self.obj)
             .then(
                 function(response){
-//                    document.getElementById("Button").disabled=true;
                     self.status="Success";
                     return response.data;
                 },
@@ -87,7 +71,7 @@ attendance.controller('attendanceCtrl', ['$http','$q', '$window', function($http
 
 
     
-    
+    //get entire month logs
     self.send2 = function() {
         
     var config =  {
@@ -114,10 +98,8 @@ attendance.controller('attendanceCtrl', ['$http','$q', '$window', function($http
     }
 
 
-      
-      //NOTE: No admin, put the user checkout button on the table
-            self.checkout = function(id) {
-//             self.status2="Loading...";
+        //Checkout
+        self.checkout = function(id) {
              var d2 = new Date();
              self.hours2 = d2.getHours();
              self.minutes2 = d2.getMinutes();
@@ -127,8 +109,7 @@ attendance.controller('attendanceCtrl', ['$http','$q', '$window', function($http
             .then(
                 function(response){
                     alert("You have checked out successfully");
-//                    self.status2 = "You have checked out successfully";
-//                    $window.location.href='/admin';
+
                     return response.data;
                 },
                 function(errResponse){
@@ -140,6 +121,7 @@ attendance.controller('attendanceCtrl', ['$http','$q', '$window', function($http
              
           }
       
+        //get logs from DB
         $http.get(baseURL+'login')
         .then(
                 function(response){
@@ -155,16 +137,7 @@ attendance.controller('attendanceCtrl', ['$http','$q', '$window', function($http
            
     
       
-      self.redirect = function() {
-          console.log(self.code);
-          if(self.code == 'qwertypoiu') {
-              $window.location.href='/admin';
-          }
-          
-          else {
-              self.message='incorrect password, Try Again';
-          }
-      }
+
     
     
 }]);

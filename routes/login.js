@@ -9,10 +9,10 @@ var Verify = require('./verify');
 
 
 
-var dishRouter = express.Router();
-dishRouter.use(bodyParser.json());
+var loginRouter = express.Router();
+loginRouter.use(bodyParser.json());
 
-dishRouter.route('/')
+loginRouter.route('/')
 
 
 
@@ -21,9 +21,9 @@ dishRouter.route('/')
     var myDate = d.getDate();
     var myMonth = d.getMonth() + 1;
 
-     Login.find({date: myDate, month: myMonth}, function(err,dish){
+     Login.find({date: myDate, month: myMonth}, function(err,log){
          if(err) throw err;
-         res.json(dish);
+         res.json(log);
 
      });
 
@@ -33,9 +33,9 @@ dishRouter.route('/')
 
 
 .post(function(req,res,next) {
-    Login.create(req.body, function(err,dish) {
+    Login.create(req.body, function(err,log) {
         if(err) return next(err);
-        res.json(dish);
+        res.json(log);
     });
 
 
@@ -48,29 +48,29 @@ dishRouter.route('/')
     });
 });
 
-dishRouter.route('/:dishId')
+loginRouter.route('/:logId')
 //
 //.get(function(req,res,next){
-//    Login.findById(req.params.dishId, function(err, dish) {
+//    Login.findById(req.params.logId, function(err, log) {
 //        if(err) return next(err);
-//        res.json(dish);
+//        res.json(log);
 //    });
 //})
 //
 .put(function(req,res,next) {
-    Login.findByIdAndUpdate(req.params.dishId, {
+    Login.findByIdAndUpdate(req.params.logId, {
         $set:{'minutes1':req.body.minutes1,'hours1':req.body.hours1}
     }, {
         new:true
-    },function (err,dish) {
+    },function (err,log) {
         if(err) throw err;
 
-        res.json(dish);
+        res.json(log);
     })
 });
 
 //.delete(function(req,res,next) {
-//    Login.findByIdAndRemove(req.params.dishId, function(err, resp){
+//    Login.findByIdAndRemove(req.params.logId, function(err, resp){
 //        if(err) throw err;
 //        res.json(resp);
 //    });
@@ -80,4 +80,4 @@ dishRouter.route('/:dishId')
 //
 
 
-module.exports = dishRouter;
+module.exports = loginRouter;
